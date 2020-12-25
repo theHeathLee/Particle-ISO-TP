@@ -4,7 +4,7 @@ ___
 
 **This project is a rebuilt version of [lishen2 isotp-c](https://github.com/lishen2/isotp-c), to work out of the box with Particle devices. That code was inspired by [openxc isotp-c](https://github.com/openxc/isotp-c), but the code has been completely re-written.**
 
-This is a platform agnostic C library that implements the [ISO 15765-2](https://en.wikipedia.org/wiki/ISO_15765-2) (also known as ISO-TP) protocol, which runs over a CAN bus. Quoting Wikipedia:
+This is a platform agnostic C++ library that implements the [ISO 15765-2](https://en.wikipedia.org/wiki/ISO_15765-2) (also known as ISO-TP) protocol, which runs over a CAN bus. Quoting Wikipedia:
 
 >ISO 15765-2, or ISO-TP, is an international standard for sending data packets over a CAN-Bus.
 >The protocol allows for the transport of messages that exceed the eight byte maximum payload of CAN frames. 
@@ -17,7 +17,7 @@ This library doesn't assume anything about the source of the ISO-TP messages or 
 
 ## Example
 
-```C
+```C++
 #include "../lib/Particle-ISO-TP/src/isotp.h"
 
 static IsoTpLink g_link;
