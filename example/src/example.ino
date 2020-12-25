@@ -1,14 +1,10 @@
-# Particle-ISO-TP
-ISO-TP Library for Particle devices
-
-
-This project is a rebuilt version of [lishen2 isotp-c](https://github.com/lishen2/isotp-c), to work out of the box with Particle devices. That code was inspired by [openxc isotp-c](https://github.com/openxc/isotp-c), but the code has been completely re-written.
-
-
-## Example
-
-```C
-#include "../lib/Particle-ISO-TP/src/isotp.h"
+/*
+ * Project example
+ * Description: Shows how to use ISO-TP library
+ * Author: Heath Lee
+ * Date: 25.12.2020
+ */
+#include "../Particle-ISO-TP/src/isotp.h"
 
 static IsoTpLink g_link;
 #define ISOTP_BUFSIZE 100
@@ -42,4 +38,3 @@ void canSendIsoTP()
   //send via iso-tp
   isotp_send(&g_link , txDataPtr, sizeof(txData));
 }
-```
