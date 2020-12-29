@@ -33,6 +33,10 @@ void setup() {
 
   can.begin(250000); // initialize can at 250 kbs 
   Serial.begin(9600); //usb debugging
+  
+  isotp_init_link(&g_link, 0x700,
+						g_isotpSendBuf, sizeof(g_isotpSendBuf), 
+						g_isotpRecvBuf, sizeof(g_isotpRecvBuf));
 
 }
 
@@ -46,9 +50,6 @@ delay(5000);
 
 void canSendIsoTP()
 {
-  isotp_init_link(&g_link, 0x700,
-						g_isotpSendBuf, sizeof(g_isotpSendBuf), 
-						g_isotpRecvBuf, sizeof(g_isotpRecvBuf));
   /*create a message array to send that is 10 bytes long, 2 bigger than a maximum can frame size*/
   uint8_t txData[] = {0x02,0x01,0x00,0x55,0x55,0x55,0x55,0x55,0x66,0x77};
   /*make a pointer for the above array*/
